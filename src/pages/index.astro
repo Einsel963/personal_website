@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+
+// Edit the homepage structure here. Update the actual news items in `src/content/news/`.
+const newsItems = (await getCollection('news'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+---
+
+<BaseLayout title="Home">
+  <section class="page-intro">
+    <p class="eyebrow">Physics</p>
+    <h1>{profile.name}</h1>
+    <p class="lead">{profile.title}</p>
+    <p>{profile.bio}</p>
+  </section>
+
+  <div class="split">
+    <div class="stack">
+      <section class="section">
+        <h2>Research Interests</h2>
+        <ul class="tag-list">
+          {profile.researchInterests.map((interest) => <li>{interest}</li>)}
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Current Projects</h2>
+        <div class="card-grid">
+          {
+            profile.currentProjects.map((project) => (
+              <article class="card">
+                <p>{project}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+
+    <aside class="section">
+      <h2>Recent News</h2>
+      <div class="stack">
+        {
+          newsItems.map((item) => (
+            <article class="card">
+              <p class="meta">
+                {item.data.date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </p>
+              <h3>{item.data.title}</h3>
+              <p>{item.data.summary}</p>
+            </article>
+          ))
+        }
+      </div>
+    </aside>
+  </div>
+</BaseLayout>

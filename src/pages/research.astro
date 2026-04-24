@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Edit individual research directions in `src/content/research/`.
+const rawDirections = (await getCollection('research')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const directions = await Promise.all(
+  rawDirections.map(async (entry) => {
+    const { Content } = await entry.render();
+    return { ...entry, Content };
+  })
+);
+---
+
+<BaseLayout
+  title="Research"
+  description="Research directions in quantum information, Bell nonlocality, and open quantum systems."
+>
+  <section class="page-intro">
+    <p class="eyebrow">Research</p>
+    <h1>Current Directions</h1>
+    <p class="lead">
+      The current research program combines mathematical questions about quantum
+      correlations with physically motivated problems in measurement and
+      dynamics.
+    </p>
+  </section>
+
+  <section class="stack">
+    {
+      directions.map((direction) => (
+        <article class="card">
+          <h2>{direction.data.title}</h2>
+          <p class="meta">{direction.data.summary}</p>
+          <ul class="tag-list">
+            {direction.data.keywords.map((keyword) => <li>{keyword}</li>)}
+          </ul>
+          <div class="prose">
+            <direction.Content />
+          </div>
+        </article>
+      ))
+    }
+  </section>
+</BaseLayout>

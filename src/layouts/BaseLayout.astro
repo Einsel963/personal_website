@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+import { profile } from '../data/profile';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = profile.shortIdentity } = Astro.props;
+
+const navigation = [
+  { href: '/', label: 'Home' },
+  { href: '/research/', label: 'Research' },
+  { href: '/publications/', label: 'Publications' },
+  { href: '/notes-talks/', label: 'Notes & Talks' },
+  { href: '/cv/', label: 'CV' },
+  { href: '/contact/', label: 'Contact' }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} | {profile.name}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="site-title" href="/">{profile.name}</a>
+        <nav aria-label="Primary navigation">
+          <ul class="site-nav">
+            {
+              navigation.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class:list={{ active: currentPath === item.href }}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-content">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>{profile.name}</p>
+        <p>{profile.title}</p>
+      </div>
+    </footer>
+  </body>
+</html>

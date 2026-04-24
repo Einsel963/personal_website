@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout title="CV">
+  <section class="page-intro">
+    <p class="eyebrow">Curriculum Vitae</p>
+    <h1>Short Web CV</h1>
+    <p class="lead">
+      This page gives a brief overview online, while the PDF link can later be
+      replaced with a full academic CV.
+    </p>
+  </section>
+
+  <section class="stack">
+    <article class="card">
+      <h2>Profile</h2>
+      <p>
+        Xiangyu Ma is a prospective graduate student in physics with research
+        interests spanning quantum information, Bell nonlocality, and quantum
+        measurement theory.
+      </p>
+      <p>
+        The current focus is on mathematically structured questions about
+        correlation sets together with physically motivated models of
+        measurement and open-system dynamics.
+      </p>
+      <p>
+        <a class="button-link" href={profile.cv.pdfPath} download>
+          Download PDF CV
+        </a>
+      </p>
+    </article>
+
+    <article class="card">
+      <h2>Education</h2>
+      <p>
+        <strong>B.S. in Physics (placeholder)</strong><br />
+        Your University Name, expected year
+      </p>
+    </article>
+
+    <article class="card">
+      <h2>Research Experience</h2>
+      <ul>
+        <li>Undergraduate research in quantum information and foundations.</li>
+        <li>Independent reading on Bell inequalities and nonlocal games.</li>
+        <li>Computational experiments related to open quantum dynamics.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>Academic Service and Activities</h2>
+      <ul>
+        <li>Reading group participant in quantum information theory.</li>
+        <li>Seminar organizer for student discussions in theoretical physics.</li>
+        <li>Coursework support and peer mentoring in advanced mechanics.</li>
+      </ul>
+    </article>
+  </section>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const rawPublications = (await getCollection('publications')).sort((a, b) => {
+  if (b.data.year !== a.data.year) {
+    return b.data.year - a.data.year;
+  }
+
+  return a.data.title.localeCompare(b.data.title);
+});
+
+const publications = await Promise.all(
+  rawPublications.map(async (entry) => {
+    const { Content } = await entry.render();
+    return { ...entry, Content };
+  })
+);
+
+const sections = [
+  { heading: 'Preprints', key: 'preprint' },
+  { heading: 'Manuscripts in preparation', key: 'in-preparation' },
+  { heading: 'Selected research reports', key: 'report' }
+] as const;
+---
+
+<BaseLayout title="Publications">
+  <section class="page-intro">
+    <p class="eyebrow">Publications</p>
+    <h1>Publications and Reports</h1>
+    <p class="lead">
+      This page is driven by Markdown entries so it stays easy to update as new
+      papers, drafts, and technical reports are added.
+    </p>
+  </section>
+
+  {
+    sections.map((section) => (
+      <section class="section">
+        <h2>{section.heading}</h2>
+        <div class="stack">
+          {publications
+            .filter((entry) => entry.data.category === section.key)
+            .map((entry) => (
+              <article class="card">
+                <h3>{entry.data.title}</h3>
+                <p class="meta">
+                  {entry.data.authors} <br />
+                  {entry.data.venue} ({entry.data.year})
+                  {entry.data.status ? ` · ${entry.data.status}` : ''}
+                </p>
+                <div class="prose">
+                  <entry.Content />
+                </div>
+              </article>
+            ))}
+        </div>
+      </section>
+    ))
+  }
+</BaseLayout>

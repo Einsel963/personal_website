@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout title="Contact">
+  <section class="page-intro">
+    <p class="eyebrow">Contact</p>
+    <h1>Get in Touch</h1>
+    <p class="lead">
+      Replace the placeholder links below with your real profiles and preferred
+      contact details.
+    </p>
+  </section>
+
+  <section class="card">
+    <dl class="detail-list">
+      <div>
+        <dt>Email</dt>
+        <dd>
+          <a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a>
+        </dd>
+      </div>
+      <div>
+        <dt>GitHub</dt>
+        <dd><a href={profile.contact.github}>{profile.contact.github}</a></dd>
+      </div>
+      <div>
+        <dt>Google Scholar</dt>
+        <dd><a href={profile.contact.scholar}>{profile.contact.scholar}</a></dd>
+      </div>
+      <div>
+        <dt>ORCID</dt>
+        <dd><a href={profile.contact.orcid}>{profile.contact.orcid}</a></dd>
+      </div>
+      <div>
+        <dt>Location</dt>
+        <dd>{profile.contact.location}</dd>
+      </div>
+    </dl>
+  </section>
+</BaseLayout>

@@ -1,0 +1,109 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const rawTalks = (await getCollection('talks')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+const rawNotes = (await getCollection('notes')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const talks = await Promise.all(
+  rawTalks.map(async (entry) => {
+    const { Content } = await entry.render();
+    return { ...entry, Content };
+  })
+);
+
+const notes = await Promise.all(
+  rawNotes.map(async (entry) => {
+    const { Content } = await entry.render();
+    return { ...entry, Content };
+  })
+);
+---
+
+<BaseLayout title="Notes & Talks">
+  <section class="page-intro">
+    <p class="eyebrow">Notes & Talks</p>
+    <h1>Talks, Notes, and Working Documents</h1>
+    <p class="lead">
+      Placeholder entries below can be replaced with real seminar talks,
+      lecture notes, and technical writeups as the site grows.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Research Talks</h2>
+    <div class="stack">
+      {
+        talks.map((entry) => (
+          <article class="card">
+            <h3>{entry.data.title}</h3>
+            <p class="meta">
+              {entry.data.event} · {entry.data.location} ·{' '}
+              {entry.data.date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long'
+              })}
+            </p>
+            <div class="prose">
+              <entry.Content />
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Lecture Notes</h2>
+    <div class="stack">
+      {
+        notes
+          .filter((entry) => entry.data.category === 'lecture-note')
+          .map((entry) => (
+            <article class="card">
+              <h3>{entry.data.title}</h3>
+              <p class="meta">
+                {entry.data.audience} ·{' '}
+                {entry.data.date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long'
+                })}
+              </p>
+              <div class="prose">
+                <entry.Content />
+              </div>
+            </article>
+          ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Technical Notes</h2>
+    <div class="stack">
+      {
+        notes
+          .filter((entry) => entry.data.category === 'technical-note')
+          .map((entry) => (
+            <article class="card">
+              <h3>{entry.data.title}</h3>
+              <p class="meta">
+                {entry.data.audience} ·{' '}
+                {entry.data.date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long'
+                })}
+              </p>
+              <div class="prose">
+                <entry.Content />
+              </div>
+            </article>
+          ))
+      }
+    </div>
+  </section>
+</BaseLayout>
