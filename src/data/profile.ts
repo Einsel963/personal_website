@@ -22,7 +22,7 @@ export const profile = {
     pdfPath: '/files/xiangyu-ma-cv.pdf'
   },
   contact: {
-    email: 'MXY1963937485@hotmail.com',
+    email: 'MXY1963937485 [at] hotmail [dot] com',
     github: 'https://github.com/Einsel963',
     scholar: 'coming soon~',
     orcid: 'coming soon~',
