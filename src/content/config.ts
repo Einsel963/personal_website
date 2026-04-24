@@ -35,7 +35,11 @@ const talks = defineCollection({
     event: z.string(),
     location: z.string(),
     date: z.coerce.date(),
-    type: z.enum(['research-talk'])
+    type: z.enum(['research-talk']),
+    category: z.string().optional(),
+    year: z.number().optional(),
+    status: z.string().optional(),
+    pdf: z.string().optional()
   })
 });
 
@@ -43,8 +47,12 @@ const notes = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
-    category: z.enum(['lecture-note', 'technical-note']),
-    audience: z.string()
+    type: z.string().optional(),
+    category: z.enum(['lecture-note', 'technical-note', 'lecture-notes']),
+    audience: z.string(),
+    year: z.number().optional(),
+    status: z.string().optional(),
+    pdf: z.string().optional()
   })
 });
 
