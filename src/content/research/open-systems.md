@@ -1,20 +1,21 @@
 ---
-title: Quantum measurement, open systems, and many-body dynamics
-order: 3
+title: "Quantum Measurement, Open Systems, and Many-Body Dynamics"
+summary: "I am developing background in quantum measurement theory, open quantum systems, and measurement-induced dynamics."
 keywords:
+  - quantum measurement
   - open quantum systems
-  - measurement theory
-  - many-body dynamics
-summary: Connecting measurement backaction, dissipation, and effective dynamics in experimentally motivated quantum models.
+  - continuous measurement
+  - quantum trajectories
+  - Lindblad dynamics
+  - non-Hermitian dynamics
+  - measurement-induced dynamics
+order: 3
 ---
 
-<!-- Edit this Markdown file to update the third research direction. -->
+Beyond Bell scenarios and correlation geometry, I am developing background in quantum measurement theory, open quantum systems, and non-equilibrium quantum dynamics. These topics are important for understanding how idealized quantum information-theoretic structures are modified in realistic physical settings.
 
-This direction focuses on how measurement and environment-induced effects modify
-the evolution of quantum systems. The aim is to connect abstract measurement
-theory with concrete dynamical models that capture decoherence, monitoring, and
-non-unitary evolution.
+I am especially interested in the transition from projective measurements to weak and continuous measurements, and in how measurement backaction can be described through quantum trajectories, stochastic evolution, and Lindblad-type master equations. This perspective provides a bridge between quantum foundations and experimentally relevant open-system dynamics.
 
-The long-term motivation is to better understand how information-theoretic and
-foundational questions change once realistic open-system behavior is taken
-seriously.
+A related long-term interest is measurement-induced dynamics in many-body systems. Continuous monitoring, non-Hermitian effective descriptions, and measurement-induced phase transitions suggest that measurement is not merely a passive readout process, but can actively shape the structure of quantum states and correlations.
+
+At the current stage, this direction serves as both a theoretical foundation and a possible future extension of my work on quantum correlations. I hope to understand how multipartite correlations and resource structures behave when measurement, decoherence, and environmental coupling are treated as intrinsic parts of the physical problem.
