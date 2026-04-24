@@ -1,31 +1,31 @@
 // Edit this file for the main biography, interests, projects, and contact details.
 export const profile = {
   name: 'Xiangyu Ma',
-  title: 'Prospective Graduate Student in Physics',
+  title: 'Undergraduate Student | Prospective Graduate Student in Physics',
   shortIdentity:
-    'Interested in quantum information theory, quantum foundations, and the geometry of quantum correlations.',
-  bio: `Xiangyu Ma is a prospective graduate student in physics working at the interface of quantum information theory and quantum foundations. He is especially interested in how nonclassical correlations, measurement constraints, and open-system effects shape what can be observed in realistic quantum experiments.`,
+    'Interested in quantum information theory, quantum foundations, and quantum many body theory.',
+  bio: `I am a undergraduate student with research interests in quantum information theory,quantum foundations,quantum many body theory,and open quantum systems. My current work focuses on the geometry of multipartite Bell scenarios,especially the (3,2,2)setting, quantum realizability of correlation structures,and the relation between entanglement classes and Bell-type inequalities.\\I am preparing for graduate study in theoretical physics and quantum information. This website collects my research interests, selected nots, talks, and academic materials`,
   researchInterests: [
     'quantum information theory',
     'quantum foundations',
     'Bell inequalities',
-    'multipartite quantum correlations',
+    'quantum many body theory',
     'quantum resource theories',
     'open quantum systems and measurement theory'
   ],
   currentProjects: [
     'Studying multipartite Bell scenarios with symmetry-reduced descriptions of correlation sets.',
     'Exploring fixed-observable quantum realizability questions and the geometry of constrained correlation bodies.',
-    'Developing toy models for measurement backaction in open many-body quantum dynamics.'
+    'Developing background in continuous measurement, open quantum systems, and measurement-induced dynamics.'
   ],
   cv: {
     pdfPath: '/files/xiangyu-ma-cv.pdf'
   },
   contact: {
-    email: 'xiangyu.ma@university.edu',
-    github: 'https://github.com/xiangyuma',
-    scholar: 'https://scholar.google.com/citations?user=placeholder',
-    orcid: 'https://orcid.org/0000-0000-0000-0000',
-    location: 'Shanghai, China'
+    email: 'MXY1963937485@hotmail.com',
+    github: 'https://github.com/Einsel963',
+    scholar: 'coming soon~',
+    orcid: 'coming soon~',
+    location: 'Wuhan, China & Tokyo, Japan'
   }
 };
