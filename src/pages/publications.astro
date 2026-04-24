@@ -35,27 +35,41 @@ const sections = [
   </section>
 
   {
-    sections.map((section) => (
-      <section class="section">
-        <h2>{section.heading}</h2>
-        <div class="stack">
-          {publications
-            .filter((entry) => entry.data.category === section.key)
-            .map((entry) => (
+    sections.map((section) => {
+      const sectionEntries = publications.filter(
+        (entry) => entry.data.category === section.key
+      );
+
+      return (
+        <section class="section">
+          <h2>{section.heading}</h2>
+          <div class="stack">
+            {sectionEntries.length > 0 ? (
+              sectionEntries.map((entry) => (
+                <article class="card">
+                  <h3>{entry.data.title}</h3>
+                  <p class="meta">
+                    {entry.data.authors} <br />
+                    {entry.data.venue} ({entry.data.year})
+                    {entry.data.status ? ` - ${entry.data.status}` : ''}
+                  </p>
+                  <div class="prose">
+                    <entry.Content />
+                  </div>
+                </article>
+              ))
+            ) : (
               <article class="card">
-                <h3>{entry.data.title}</h3>
-                <p class="meta">
-                  {entry.data.authors} <br />
-                  {entry.data.venue} ({entry.data.year})
-                  {entry.data.status ? ` · ${entry.data.status}` : ''}
+                <p>
+                  {section.key === 'preprint'
+                    ? 'No public preprints yet.'
+                    : 'No entries yet.'}
                 </p>
-                <div class="prose">
-                  <entry.Content />
-                </div>
               </article>
-            ))}
-        </div>
-      </section>
-    ))
+            )}
+          </div>
+        </section>
+      );
+    })
   }
 </BaseLayout>
