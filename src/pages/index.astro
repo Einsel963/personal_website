@@ -12,6 +12,8 @@ const newsItems = (await getCollection('news'))
 const hasProfileImage = existsSync(
   new URL('../../public/images/profile.jpg', import.meta.url)
 );
+const withBase = (path: string) =>
+  path.startsWith('/') ? `${import.meta.env.BASE_URL}${path.slice(1)}` : path;
 ---
 
 <BaseLayout title="Home">
@@ -24,7 +26,7 @@ const hasProfileImage = existsSync(
       <div class="avatar-panel" aria-label="Profile image">
         {hasProfileImage ? (
           <img
-            src="/images/profile.jpg"
+            src={withBase('/images/profile.jpg')}
             alt={`Portrait of ${profile.name}`}
             class="profile-avatar"
           />

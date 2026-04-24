@@ -27,6 +27,8 @@ const availableNotes = notes.filter((note) => note.data.pdf);
 const forthcomingNotes = notes.filter((note) => !note.data.pdf);
 const availableTalks = talks.filter((talk) => talk.data.pdf);
 const forthcomingTalks = talks.filter((talk) => !talk.data.pdf);
+const withBase = (path: string) =>
+  path.startsWith('/') ? `${import.meta.env.BASE_URL}${path.slice(1)}` : path;
 ---
 
 <BaseLayout title="Notes & Talks">
@@ -60,7 +62,7 @@ const forthcomingTalks = talks.filter((talk) => !talk.data.pdf);
             <p>
               <a
                 class="button-link"
-                href={entry.data.pdf}
+                href={withBase(entry.data.pdf)}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -113,7 +115,7 @@ const forthcomingTalks = talks.filter((talk) => !talk.data.pdf);
             <p>
               <a
                 class="button-link"
-                href={entry.data.pdf}
+                href={withBase(entry.data.pdf)}
                 target="_blank"
                 rel="noopener noreferrer"
               >

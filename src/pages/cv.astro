@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { profile } from '../data/profile';
+
+const withBase = (path: string) =>
+  path.startsWith('/') ? `${import.meta.env.BASE_URL}${path.slice(1)}` : path;
 ---
 
 <BaseLayout title="CV">
@@ -28,7 +31,7 @@ import { profile } from '../data/profile';
         quantum correlations, and open quantum systems.
       </p>
       <p>
-        <a class="button-link" href={profile.cv.pdfPath} download>
+        <a class="button-link" href={withBase(profile.cv.pdfPath)} download>
           Download PDF CV
         </a>
       </p>
