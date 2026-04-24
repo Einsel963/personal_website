@@ -265,8 +265,64 @@ ul {
   grid-template-columns: minmax(0, 1.8fr) minmax(18rem, 1fr);
 }
 
+.profile-intro {
+  align-items: stretch;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(12rem, 15rem) minmax(0, 1fr);
+  margin-top: 1.5rem;
+}
+
+.avatar-panel {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: center;
+  min-height: 16rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.profile-avatar {
+  border-radius: 0.45rem;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.avatar-fallback {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  text-align: center;
+}
+
+.avatar-initials {
+  align-items: center;
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--accent);
+  display: inline-flex;
+  font-size: 1.8rem;
+  font-weight: 700;
+  height: 5rem;
+  justify-content: center;
+  width: 5rem;
+}
+
+.avatar-note {
+  font-size: 0.95rem;
+}
+
 @media (max-width: 800px) {
   .card-grid.two-column,
+  .profile-intro,
   .split {
     grid-template-columns: 1fr;
   }

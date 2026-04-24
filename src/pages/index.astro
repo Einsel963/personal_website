@@ -1,4 +1,5 @@
 ---
+import { existsSync } from 'node:fs';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { profile } from '../data/profile';
@@ -7,6 +8,10 @@ import { profile } from '../data/profile';
 const newsItems = (await getCollection('news'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
+
+const hasProfileImage = existsSync(
+  new URL('../../public/images/profile.jpg', import.meta.url)
+);
 ---
 
 <BaseLayout title="Home">
@@ -14,7 +19,33 @@ const newsItems = (await getCollection('news'))
     <p class="eyebrow">Physics</p>
     <h1>{profile.name}</h1>
     <p class="lead">{profile.title}</p>
-    <p>{profile.bio}</p>
+    <p>{profile.shortIdentity}</p>
+    <div class="profile-intro">
+      <div class="avatar-panel" aria-label="Profile image">
+        {hasProfileImage ? (
+          <img
+            src="/images/profile.jpg"
+            alt={`Portrait of ${profile.name}`}
+            class="profile-avatar"
+          />
+        ) : (
+          <div class="avatar-fallback">
+            <span class="avatar-initials">XM</span>
+            <span class="avatar-note">Profile photo coming soon.</span>
+          </div>
+        )}
+      </div>
+      <div class="card prose">
+        <p>{profile.bio}</p>
+        <p>
+          Beyond formal research, I enjoy reading, music, and organizing study
+          notes into structured materials. I often use writing as a way to
+          clarify concepts, connect different areas of physics, and record the
+          development of my research interests. This website is also intended as
+          a long-term archive of my learning process and academic growth.
+        </p>
+      </div>
+    </div>
   </section>
 
   <div class="split">

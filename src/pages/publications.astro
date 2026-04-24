@@ -18,9 +18,9 @@ const publications = await Promise.all(
 );
 
 const sections = [
-  { heading: 'Preprints', key: 'preprint' },
   { heading: 'Manuscripts in preparation', key: 'in-preparation' },
-  { heading: 'Selected research reports', key: 'report' }
+  { heading: 'Selected research reports', key: 'report' },
+  { heading: 'Preprints', key: 'preprint' }
 ] as const;
 ---
 
@@ -29,8 +29,9 @@ const sections = [
     <p class="eyebrow">Publications</p>
     <h1>Publications and Reports</h1>
     <p class="lead">
-      This page is driven by Markdown entries so it stays easy to update as new
-      papers, drafts, and technical reports are added.
+      This page presents my academic papers, research manuscripts, and selected
+      scholarly reports. Readers are welcome to learn more about my ongoing
+      work through the materials listed below.
     </p>
   </section>
 

@@ -8,8 +8,10 @@ import { profile } from '../data/profile';
     <p class="eyebrow">Curriculum Vitae</p>
     <h1>Short Web CV</h1>
     <p class="lead">
-      This page gives a brief overview online, while the PDF link can later be
-      replaced with a full academic CV.
+      This page provides a brief academic self-introduction, including my
+      education, research experience, academic activities, honors, and
+      technical background. A PDF version of my CV is also available for
+      reference.
     </p>
   </section>
 
@@ -17,14 +19,13 @@ import { profile } from '../data/profile';
     <article class="card">
       <h2>Profile</h2>
       <p>
-        Xiangyu Ma is a prospective graduate student in physics with research
-        interests spanning quantum information, Bell nonlocality, and quantum
-        measurement theory.
+        I am a undergraduate student at Jilin University
+        preparing for graduate study in physics and quantum information.
       </p>
       <p>
-        The current focus is on mathematically structured questions about
-        correlation sets together with physically motivated models of
-        measurement and open-system dynamics.
+        My current academic interests include statistical physics, quantum
+        information, high energy physics, Bell inequalities, multipartite
+        quantum correlations, and open quantum systems.
       </p>
       <p>
         <a class="button-link" href={profile.cv.pdfPath} download>
@@ -35,28 +36,180 @@ import { profile } from '../data/profile';
 
     <article class="card">
       <h2>Education</h2>
-      <p>
-        <strong>B.S. in Physics (placeholder)</strong><br />
-        Your University Name, expected year
-      </p>
+      <div class="stack">
+        <div>
+          <p>
+            <strong>Jilin University</strong><br />
+            B.Eng. in Traffic and Transportation<br />
+            College of Transportation<br />
+            September 1, 2021 - June 30, 2026
+          </p>
+          <ul>
+            <li>Current Status: Undergraduate</li>
+            <li>GPA: 85.98/100</li>
+            <li>TOEFL: 98</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Selected Core Curriculum</h3>
+          <ul>
+            <li>Quantum Mechanics: 95.4</li>
+            <li>Classical Electrodynamics: 93</li>
+            <li>Thermodynamics and Statistical Physics: 84.6</li>
+            <li>Methods of Mathematical Physics: 94</li>
+            <li>University Physics: 97</li>
+          </ul>
+        </div>
+      </div>
     </article>
 
     <article class="card">
       <h2>Research Experience</h2>
+      <div class="stack">
+        <div>
+          <h3>Nuclear Matter Phase Structure Study</h3>
+          <p class="meta">
+            Institute of Modern Physics, Chinese Academy of Sciences<br />
+            June 2023 - August 2023<br />
+            Supervisor: Hao Qiu
+          </p>
+          <p>
+            <strong>Research Topic:</strong> Collective polarization of nuclear
+            matter in the RHIC energy region, phase boundaries, and critical
+            points.
+          </p>
+          <ul>
+            <li>
+              Studied introductory topics related to the phase structure of
+              nuclear matter, including quark confinement, quark-gluon plasma,
+              and critical behavior in complex phase transitions.
+            </li>
+            <li>
+              Developed a preliminary understanding of hypernucleus
+              reconstruction and attempted basic modeling using CERN ROOT.
+            </li>
+            <li>
+              Learned and used CERN ROOT for data analysis and modeling
+              practice.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>
+            Quantum Nonlocality and Multipartite Entanglement in (3,2,2)
+            Scenarios
+          </h3>
+          <p class="meta">
+            University of Tokyo<br />
+            July 2025 - Present<br />
+            Supervisors: Prof. Naomichi Hatano; Jaeha Lee
+          </p>
+          <p>
+            <strong>Research Topic:</strong> Bell-type inequalities, including
+            Mermin and Svetlichny inequalities, in multipartite quantum
+            systems, focusing on biseparable and genuinely multipartite
+            entangled states.
+          </p>
+          <ul>
+            <li>
+              Investigated the structure of biseparable states in the (3,2,2)
+              Bell scenario and their relation to bipartite extensions.
+            </li>
+            <li>
+              Conducted Monte Carlo simulations to analyze distributions in the
+              (M,S) operator plane.
+            </li>
+            <li>
+              Studied GHZ- and W-class genuinely multipartite entangled states
+              through optimized measurement settings and Svetlichny-type
+              inequalities.
+            </li>
+            <li>
+              Analyzed robustness to white noise through critical visibility.
+            </li>
+            <li>
+              Developed reproducible Python codes using NumPy, SciPy, CVXPY,
+              and Matplotlib for quantum-correlation simulations,
+              violation-region analysis, and SDP-based boundary tests.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Academic Activities</h2>
+      <div class="stack">
+        <div>
+          <h3>Fudan International Summer School for Graduate Students on Optics</h3>
+          <p class="meta">August 2024</p>
+          <p>
+            Topics: Nanophotonics, nonlinear and ultrafast optics, quantum
+            optics, and quantum computing.
+          </p>
+        </div>
+
+        <div>
+          <h3>Physics of Open Systems: Resonance, Symmetry and Topology</h3>
+          <p class="meta">August 2025</p>
+          <p>
+            Topics: Open systems, resonance dynamics, non-Hermitian physics,
+            and Floquet topological systems.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Awards and Honors</h2>
       <ul>
-        <li>Undergraduate research in quantum information and foundations.</li>
-        <li>Independent reading on Bell inequalities and nonlocal games.</li>
-        <li>Computational experiments related to open quantum dynamics.</li>
+        <li>
+          Expected: Jilin University Second-class Scholarship<br />
+          Awarding Institution: Jilin University<br />
+          Date Received: 2026
+        </li>
+        <li>
+          Provincial Second Prize in the National College Students Mathematical
+          Contest in Modeling<br />
+          Awarding Institution: Chinese Society of Industrial and Applied
+          Mathematics<br />
+          Date Received: December 2023
+        </li>
+        <li>
+          University-level Second Prize of China Undergraduate Physics
+          Tournament<br />
+          Awarding Institution: College of Physics, Jilin University<br />
+          Date Received: December 2022
+        </li>
       </ul>
     </article>
 
     <article class="card">
-      <h2>Academic Service and Activities</h2>
-      <ul>
-        <li>Reading group participant in quantum information theory.</li>
-        <li>Seminar organizer for student discussions in theoretical physics.</li>
-        <li>Coursework support and peer mentoring in advanced mechanics.</li>
-      </ul>
+      <h2>Technologies</h2>
+      <div class="card-grid two-column">
+        <div>
+          <h3>Programming Languages</h3>
+          <ul>
+            <li>Python</li>
+            <li>C++</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools and Technologies</h3>
+          <ul>
+            <li>CERN ROOT</li>
+            <li>MATLAB</li>
+            <li>CVXPY</li>
+            <li>NumPy</li>
+            <li>SciPy</li>
+            <li>Matplotlib</li>
+            <li>LaTeX</li>
+            <li>SolidWorks</li>
+          </ul>
+        </div>
+      </div>
     </article>
   </section>
 </BaseLayout>
