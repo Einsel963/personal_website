@@ -28,6 +28,13 @@ const basePath = import.meta.env.BASE_URL.endsWith('/')
 const normalizedCurrentPath = currentPath.startsWith(basePath)
   ? `/${currentPath.slice(basePath.length)}`
   : currentPath;
+const cloudflareAnalytics = `
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token":"5f80889d3a234666a243e8cacd51ab3d"}'
+></script>
+`;
 ---
 
 <!doctype html>
@@ -38,12 +45,7 @@ const normalizedCurrentPath = currentPath.startsWith(basePath)
     <meta name="description" content={description} />
     <title>{title} | {profile.name}</title>
     <!-- Cloudflare Web Analytics -->
-    <script
-      is:inline
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token":"5f80889d3a234666a243e8cacd51ab3d"}'
-    ></script>
+    <Fragment set:html={cloudflareAnalytics} />
     <!-- End Cloudflare Web Analytics -->
   </head>
   <body>
