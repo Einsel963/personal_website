@@ -4,7 +4,7 @@ export const profile = {
   title: 'Undergraduate Student | Prospective Graduate Student in Physics',
   shortIdentity:
     'undergraduate student at Jilin University preparing for graduate study in physics and quantum information.',
-  bio: `I am a undergraduate student at Jilin University preparing for graduate study in theoretical physics and quantum information. My current interests include quantum information theory, quantum foundations, multipartite Bell scenarios, open quantum systems, and the geometry of quantum correlations.`,
+  bio: `I am an undergraduate student at Jilin University preparing for graduate study in theoretical physics and quantum information. My current interests include quantum information theory, quantum foundations, multipartite Bell scenarios, open quantum systems, and the geometry of quantum correlations.`,
   researchInterests: [
     'quantum information theory',
     'quantum foundations',
