@@ -1,22 +1,22 @@
 // Edit this file for the main biography, interests, projects, and contact details.
 export const profile = {
   name: 'Xiangyu Ma',
-  title: 'Undergraduate Student | Prospective Graduate Student in Physics',
+  title: 'Recent Graduate | Prospective Graduate Student in Physics',
   shortIdentity:
-    'undergraduate student at Jilin University preparing for graduate study in physics and quantum information.',
-  bio: `I am an undergraduate student at Jilin University preparing for graduate study in theoretical physics and quantum information. My current interests include quantum information theory, quantum foundations, multipartite Bell scenarios, open quantum systems, and the geometry of quantum correlations.`,
+    'recent graduate of Jilin University with research experience in quantum information, multipartite Bell nonlocality, and computational methods for quantum systems.',
+  bio: `I recently graduated from Jilin University. My current research focuses on multipartite Bell nonlocality, entanglement structures, and the role of local measurement settings in tripartite quantum correlations. I am also developing research interests in tensor-network methods, quantum algorithms, computational quantum many-body physics, and open and nonequilibrium quantum systems.`,
   researchInterests: [
     'quantum information theory',
-    'quantum foundations',
-    'Bell inequalities',
-    'multipartite quantum correlations',
-    'quantum resource theories',
-    'open quantum systems and measurement theory'
+    'multipartite entanglement and Bell nonlocality',
+    'tensor-network methods',
+    'quantum algorithms and simulation',
+    'computational quantum many-body physics',
+    'open and nonequilibrium quantum systems'
   ],
   currentProjects: [
-    'Studying multipartite Bell scenarios with symmetry-reduced descriptions of correlation sets.',
-    'Exploring fixed-observable quantum realizability questions and the geometry of constrained correlation bodies.',
-    'Developing background in continuous measurement, open quantum systems, and measurement-induced dynamics.'
+    'Investigating tripartite Bell-violation mechanisms in the (3,2,2) scenario across entanglement classes and local measurement settings.',
+    'Analyzing multipartite correlation tensors and fixed-observable quantum realizability using analytical and semidefinite-programming methods.',
+    'Building a systematic foundation in tensor-network methods and exploring their connections to quantum circuits and many-body simulation.'
   ],
   cv: {
     pdfPath: '/files/xiangyu-ma-cv.pdf'
@@ -26,6 +26,6 @@ export const profile = {
     github: 'https://github.com/Einsel963',
     scholar: 'Coming soon',
     orcid: 'Coming soon',
-    location: 'Wuhan, China & Tokyo, Japan'
+    location: 'China'
   }
 };
