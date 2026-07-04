@@ -1,29 +1,37 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Edit individual research directions in `src/content/research/`.
-const rawDirections = (await getCollection('research')).sort(
-  (a, b) => a.data.order - b.data.order
+const rawDirections = (await getCollection("research")).sort(
+  (a, b) => a.data.order - b.data.order,
 );
 
 const directions = await Promise.all(
   rawDirections.map(async (entry) => {
     const { Content } = await entry.render();
     return { ...entry, Content };
-  })
+  }),
 );
 ---
 
 <BaseLayout
   title="Research"
-  description="Research directions in quantum information, Bell nonlocality, and open quantum systems."
+  description="Research projects in tripartite quantum realizability, Bell nonlocality, and multipartite quantum correlations."
 >
   <section class="page-intro">
     <p class="eyebrow">Research</p>
     <h1>Current Directions</h1>
     <p class="lead">
-      My research interests lie at the interface of quantum information theory, quantum foundations, and mathematical physics. I am currently interested in the geometry of quantum correlations in multipartite Bell scenarios, with emphasis on quantum realizability, entanglement structure, and measurement constraints. I am also developing background in quantum measurement theory and open quantum systems as a broader framework for understanding realistic quantum dynamics.
+      My current research lies at the interface of quantum information theory
+      and quantum foundations. I study the quantum realizability of multipartite
+      correlation data, with particular emphasis on the joint roles of quantum
+      states and local measurement settings. My work also investigates the
+      correlation-tensor structures of tripartite entangled states and their
+      relationship with Bell nonlocality. In the longer term, I aim to extend
+      these questions from tripartite scenarios to general multipartite systems.
+      I also have a developing interest in tensor-network methods, although this
+      is not yet part of my current research projects.
     </p>
   </section>
 
@@ -34,7 +42,9 @@ const directions = await Promise.all(
           <h2>{direction.data.title}</h2>
           <p class="meta">{direction.data.summary}</p>
           <ul class="tag-list">
-            {direction.data.keywords.map((keyword) => <li>{keyword}</li>)}
+            {direction.data.keywords.map((keyword) => (
+              <li>{keyword}</li>
+            ))}
           </ul>
           <div class="prose">
             <direction.Content />

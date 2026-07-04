@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { profile } from '../data/profile';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { profile } from "../data/profile";
 
 const withBase = (path: string) =>
-  path.startsWith('/') ? `${import.meta.env.BASE_URL}${path.slice(1)}` : path;
+  path.startsWith("/") ? `${import.meta.env.BASE_URL}${path.slice(1)}` : path;
 ---
 
 <BaseLayout title="CV">
@@ -12,9 +12,8 @@ const withBase = (path: string) =>
     <h1>Short Web CV</h1>
     <p class="lead">
       This page provides a brief academic self-introduction, including my
-      education, research experience, academic activities, honors, and
-      technical background. A PDF version of my CV is also available for
-      reference.
+      education, research experience, academic activities, honors, and technical
+      background. A PDF version of my CV is also available for reference.
     </p>
   </section>
 
@@ -22,13 +21,16 @@ const withBase = (path: string) =>
     <article class="card">
       <h2>Profile</h2>
       <p>
-        I am an undergraduate student at Jilin University
-        preparing for graduate study in physics and quantum information.
+        I recently graduated from Jilin University and am preparing for graduate
+        study in physics. My current research focuses on multipartite Bell
+        nonlocality, quantum realizability, entanglement structures, and
+        numerical methods for quantum correlations.
       </p>
       <p>
-        My current academic interests include statistical physics, quantum
-        information, high energy physics, Bell inequalities, multipartite
-        quantum correlations, and open quantum systems.
+        My broader interests include quantum many-body systems and open and
+        nonequilibrium quantum systems. I also have an emerging interest in
+        tensor-network methods and their applications to quantum many-body
+        systems and quantum computation.
       </p>
       <p>
         <a class="button-link" href={withBase(profile.cv.pdfPath)} download>
@@ -41,27 +43,58 @@ const withBase = (path: string) =>
       <h2>Education</h2>
       <div class="stack">
         <div>
+          <h3>Jilin University</h3>
           <p>
-            <strong>Jilin University</strong><br />
-            B.Eng. in Traffic and Transportation<br />
-            College of Transportation<br />
-            September 1, 2021 - June 30, 2026
+            B.Eng. in Transportation Engineering<br />
+            Sept. 2021 – Jun. 2026<br />
+            Overall average: 84.16/100
           </p>
+        </div>
+        <div>
+          <h3>Jilin University</h3>
+          <p>
+            Minor in Quantum Information Science<br />
+            Sept. 2025 – Jun. 2026
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Selected Coursework</h2>
+      <div class="card-grid two-column">
+        <div>
+          <h3>Physics and Mathematics</h3>
           <ul>
-            <li>Current Status: Undergraduate</li>
-            <li>GPA: 85.98/100</li>
-            <li>TOEFL: 98</li>
+            <li>Quantum Mechanics</li>
+            <li>Thermodynamics and Statistical Physics</li>
+            <li>Electrodynamics</li>
+            <li>Lie Groups and Lie Algebras</li>
+            <li>Methods of Mathematical Physics II</li>
+            <li>Calculus</li>
+            <li>Linear Algebra</li>
+            <li>Mathematical Modeling</li>
           </ul>
         </div>
-
         <div>
-          <h3>Selected Core Curriculum</h3>
+          <h3>Quantum Information</h3>
           <ul>
-            <li>Quantum Mechanics: 95.4</li>
-            <li>Classical Electrodynamics: 93</li>
-            <li>Thermodynamics and Statistical Physics: 84.6</li>
-            <li>Methods of Mathematical Physics: 94</li>
-            <li>University Physics: 97</li>
+            <li>Introduction to Quantum Information</li>
+            <li>Laser Spectroscopy</li>
+            <li>Quantum Optics</li>
+            <li>Quantum Computing</li>
+            <li>Quantum Precision Measurement</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Computing and Data Science</h3>
+          <ul>
+            <li>University Computer</li>
+            <li>Artificial Intelligence</li>
+            <li>Theory and Practice of Artificial Intelligence</li>
+            <li>Theory and Method of Transportation Big Data</li>
+            <li>Course Experiment of Transport Big Data Theory and Method</li>
+            <li>Simulation Experiment of Transportation Planning</li>
           </ul>
         </div>
       </div>
@@ -71,71 +104,61 @@ const withBase = (path: string) =>
       <h2>Research Experience</h2>
       <div class="stack">
         <div>
-          <h3>Nuclear Matter Phase Structure Study</h3>
-          <p class="meta">
-            Institute of Modern Physics, Chinese Academy of Sciences<br />
-            June 2023 - August 2023<br />
-            Supervisor: Hao Qiu
-          </p>
-          <p>
-            <strong>Research Topic:</strong> Collective polarization of nuclear
-            matter in the RHIC energy region, phase boundaries, and critical
-            points.
-          </p>
-          <ul>
-            <li>
-              Studied introductory topics related to the phase structure of
-              nuclear matter, including quark confinement, quark-gluon plasma,
-              and critical behavior in complex phase transitions.
-            </li>
-            <li>
-              Developed a preliminary understanding of hypernucleus
-              reconstruction and attempted basic modeling using CERN ROOT.
-            </li>
-            <li>
-              Learned and used CERN ROOT for data analysis and modeling
-              practice.
-            </li>
-          </ul>
-        </div>
-
-        <div>
           <h3>
-            Quantum Nonlocality and Multipartite Entanglement in (3,2,2)
-            Scenarios
+            Quantum Nonlocality and Multipartite Entanglement in the (3,2,2)
+            Scenario
           </h3>
           <p class="meta">
             University of Tokyo<br />
-            July 2025 - Present<br />
-            Supervisors: Prof. Naomichi Hatano; Jaeha Lee
-          </p>
-          <p>
-            <strong>Research Topic:</strong> Bell-type inequalities, including
-            Mermin and Svetlichny inequalities, in multipartite quantum
-            systems, focusing on biseparable and genuinely multipartite
-            entangled states.
+            July 2025 – Present<br />
+            Supervisor: Prof. Naomichi Hatano<br />
+            Research Mentor: Asst. Prof. Jaeha Lee
           </p>
           <ul>
             <li>
-              Investigated the structure of biseparable states in the (3,2,2)
-              Bell scenario and their relation to bipartite extensions.
+              Developed a systematic framework for tripartite Bell-violation
+              mechanisms in the (3,2,2) scenario, showing how entanglement
+              structure and local measurement geometry jointly determine Mermin
+              and Svetlichny violations.
             </li>
             <li>
-              Conducted Monte Carlo simulations to analyze distributions in the
-              (M,S) operator plane.
+              Classified correlations across fully separable, biseparable, and
+              genuinely multipartite-entangled sectors; derived a CHSH-type
+              factorization for biseparable states, proved the Svetlichny bound
+              |S| ≤ 4, and characterized generalized GHZ, W, and representative
+              mixed-state families.
             </li>
             <li>
-              Studied GHZ- and W-class genuinely multipartite entangled states
-              through optimized measurement settings and Svetlichny-type
-              inequalities.
+              Analyzed the block structure and singular-value spectra of
+              multipartite correlation tensors to identify measurement-sensitive
+              sectors and explain violation enhancement and branch switching in
+              GHZ–W mixtures.
             </li>
             <li>
-              Analyzed robustness to white noise through critical visibility.
+              Developed reproducible Python workflows combining Monte Carlo
+              sampling, analytical and numerical parameter optimization, and
+              semidefinite programming based on the NPA hierarchy to map
+              violation regions and verify analytical boundaries.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Nuclear Matter Phase Structure Study</h3>
+          <p class="meta">
+            Institute of Modern Physics, Chinese Academy of Sciences<br />
+            June 2023 – Aug. 2023<br />
+            Supervisor: Hao Qiu
+          </p>
+          <ul>
+            <li>
+              Studied the phase structure of nuclear matter, with emphasis on
+              quark confinement, quark–gluon plasma, and critical behavior.
             </li>
             <li>
-              Developed reproducible Python codes using NumPy, SciPy, CVXPY,
-              and Matplotlib for quantum-correlation simulations,
-              violation-region analysis, and SDP-based boundary tests.
+              Conducted data analysis and numerical model implementation using
+              CERN ROOT, including exploratory work on hypernucleus
+              reconstruction.
             </li>
           </ul>
         </div>
@@ -143,74 +166,85 @@ const withBase = (path: string) =>
     </article>
 
     <article class="card">
-      <h2>Academic Activities</h2>
-      <div class="stack">
+      <h2>Skills</h2>
+      <div class="card-grid two-column">
         <div>
-          <h3>Fudan International Summer School for Graduate Students on Optics</h3>
-          <p class="meta">August 2024</p>
-          <p>
-            Topics: Nanophotonics, nonlinear and ultrafast optics, quantum
-            optics, and quantum computing.
-          </p>
+          <h3>Programming and Scientific Computing</h3>
+          <ul>
+            <li>Python: NumPy, SciPy, CVXPY, Matplotlib</li>
+            <li>C/C++</li>
+            <li>MATLAB</li>
+            <li>CERN ROOT</li>
+          </ul>
         </div>
-
         <div>
-          <h3>Physics of Open Systems: Resonance, Symmetry and Topology</h3>
-          <p class="meta">August 2025</p>
-          <p>
-            Topics: Open systems, resonance dynamics, non-Hermitian physics,
-            and Floquet topological systems.
-          </p>
+          <h3>Numerical Methods</h3>
+          <ul>
+            <li>Monte Carlo sampling</li>
+            <li>Analytical and numerical parameter optimization</li>
+            <li>Semidefinite programming</li>
+            <li>NPA hierarchy</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Machine Learning and Data Analysis</h3>
+          <ul>
+            <li>Feedforward neural networks</li>
+            <li>GRU and LSTM models</li>
+            <li>Clustering</li>
+            <li>Time-series forecasting</li>
+            <li>Feature preprocessing</li>
+            <li>Model evaluation</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Research Tools and Languages</h3>
+          <ul>
+            <li>LaTeX</li>
+            <li>Git</li>
+            <li>COMSOL</li>
+            <li>Chinese: native</li>
+            <li>English: TOEFL 89</li>
+          </ul>
         </div>
       </div>
     </article>
 
     <article class="card">
-      <h2>Awards and Honors</h2>
+      <h2>Honors and Awards</h2>
       <ul>
         <li>
-          Expected: Jilin University Second-class Scholarship<br />
-          Awarding Institution: Jilin University<br />
-          Date Received: 2026
+          Second-Class Scholarship, Jilin University, Rank 7/74, Apr. 2026
         </li>
         <li>
-          Provincial Second Prize in the National College Students Mathematical
-          Contest in Modeling<br />
-          Awarding Institution: Chinese Society of Industrial and Applied
-          Mathematics<br />
-          Date Received: December 2023
+          College Excellent Student, Jilin University, Rank 7/74, Apr. 2026
         </li>
         <li>
-          University-level Second Prize of China Undergraduate Physics
-          Tournament<br />
-          Awarding Institution: College of Physics, Jilin University<br />
-          Date Received: December 2022
+          Provincial Second Prize, National College Students Mathematical
+          Contest in Modeling, Dec. 2023
         </li>
+        <li>Second Prize, China Undergraduate Physics Tournament, Dec. 2022</li>
       </ul>
     </article>
 
     <article class="card">
-      <h2>Technologies</h2>
-      <div class="card-grid two-column">
+      <h2>Selected Academic Programs</h2>
+      <div class="stack">
         <div>
-          <h3>Programming Languages</h3>
-          <ul>
-            <li>Python</li>
-            <li>C++</li>
-          </ul>
+          <h3>Physics of Open Systems: Resonance, Symmetry and Topology</h3>
+          <p class="meta">University of Tokyo, Aug. 2025</p>
+          <p>
+            Topics: Open quantum systems, non-Hermitian physics, and Floquet
+            topology.
+          </p>
         </div>
         <div>
-          <h3>Tools and Technologies</h3>
-          <ul>
-            <li>CERN ROOT</li>
-            <li>MATLAB</li>
-            <li>CVXPY</li>
-            <li>NumPy</li>
-            <li>SciPy</li>
-            <li>Matplotlib</li>
-            <li>LaTeX</li>
-            <li>SolidWorks</li>
-          </ul>
+          <h3>International Summer School for Graduate Students on Optics</h3>
+          <p class="meta">Fudan University, Aug. 2024</p>
+          <p>
+            Topics: Quantum optics, nanophotonics, and nonlinear and ultrafast
+            optics.
+          </p>
         </div>
       </div>
     </article>

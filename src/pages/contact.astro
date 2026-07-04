@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { profile } from '../data/profile';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { profile } from "../data/profile";
 
 const maybeLink = (value: string) => /^https?:\/\//.test(value);
 ---
@@ -29,21 +29,25 @@ const maybeLink = (value: string) => /^https?:\/\//.test(value);
       <div>
         <dt>Google Scholar</dt>
         <dd>
-          {maybeLink(profile.contact.scholar) ? (
-            <a href={profile.contact.scholar}>{profile.contact.scholar}</a>
-          ) : (
-            profile.contact.scholar
-          )}
+          {
+            maybeLink(profile.contact.scholar) ? (
+              <a href={profile.contact.scholar}>{profile.contact.scholar}</a>
+            ) : (
+              profile.contact.scholar
+            )
+          }
         </dd>
       </div>
       <div>
         <dt>ORCID</dt>
         <dd>
-          {maybeLink(profile.contact.orcid) ? (
-            <a href={profile.contact.orcid}>{profile.contact.orcid}</a>
-          ) : (
-            profile.contact.orcid
-          )}
+          {
+            maybeLink(profile.contact.orcid) ? (
+              <a href={profile.contact.orcid}>{profile.contact.orcid}</a>
+            ) : (
+              profile.contact.orcid
+            )
+          }
         </dd>
       </div>
       <div>
