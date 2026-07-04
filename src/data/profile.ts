@@ -17,22 +17,23 @@ export const profile = {
     {
       title:
         "Necessary and Sufficient Conditions for Quantum Realizability in Tripartite Systems",
-      description:
-        "Developing a systematic framework for the quantum realizability of tripartite correlation data under specified or constrained local measurement settings, with the aim of deriving necessary and sufficient conditions in structured tripartite scenarios.",
-      status: "Ongoing research; manuscript in preparation.",
+      status: "Ongoing project; manuscript in preparation.",
+      period: "July 2025 - Present",
+      people:
+        "Supervision and mentoring: Prof. Naomichi Hatano; Asst. Prof. Jaeha Lee",
     },
     {
       title:
         "Correlation-Tensor Structures of Tripartite Entangled States and Bell Nonlocality",
-      description:
-        "Investigating the correlation-tensor structures of tripartite entangled states and their relationship with Mermin and Svetlichny violations across different entanglement classes and local measurement configurations.",
-      status: "Ongoing research.",
+      status: "Ongoing project.",
+      period: "July 2025 - Present",
+      people: "Related to my research internship in the Hatano Group",
     },
     {
       title: "Toward Quantum Realizability in General Multipartite Systems",
-      description:
-        "Developing a long-term extension from tripartite Bell scenarios to general n-party systems, with the aim of identifying necessary and sufficient conditions, or systematically convergent criteria, for multipartite quantum realizability.",
-      status: "Long-term research direction.",
+      status: "Long-term project / prospective direction.",
+      period: "Future extension",
+      people: "Independent long-term research planning",
     },
   ],
   cv: {
