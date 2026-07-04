@@ -1,19 +1,19 @@
 ---
-import { existsSync } from 'node:fs';
-import { getCollection } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { profile } from '../data/profile';
+import { existsSync } from "node:fs";
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { profile } from "../data/profile";
 
 // Edit the homepage structure here. Update the actual news items in `src/content/news/`.
-const newsItems = (await getCollection('news'))
+const newsItems = (await getCollection("news"))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
 
 const hasProfileImage = existsSync(
-  new URL('../../public/images/profile.jpg', import.meta.url)
+  new URL("../../public/images/profile.jpg", import.meta.url),
 );
 const withBase = (path: string) =>
-  path.startsWith('/') ? `${import.meta.env.BASE_URL}${path.slice(1)}` : path;
+  path.startsWith("/") ? `${import.meta.env.BASE_URL}${path.slice(1)}` : path;
 ---
 
 <BaseLayout title="Home">
@@ -24,27 +24,27 @@ const withBase = (path: string) =>
     <p>{profile.shortIdentity}</p>
     <div class="profile-intro">
       <div class="avatar-panel" aria-label="Profile image">
-        {hasProfileImage ? (
-          <img
-            src={withBase('/images/profile.jpg')}
-            alt={`Portrait of ${profile.name}`}
-            class="profile-avatar"
-          />
-        ) : (
-          <div class="avatar-fallback">
-            <span class="avatar-initials">XM</span>
-            <span class="avatar-note">Profile photo coming soon.</span>
-          </div>
-        )}
+        {
+          hasProfileImage ? (
+            <img
+              src={withBase("/images/profile.jpg")}
+              alt={`Portrait of ${profile.name}`}
+              class="profile-avatar"
+            />
+          ) : (
+            <div class="avatar-fallback">
+              <span class="avatar-initials">XM</span>
+              <span class="avatar-note">Profile photo coming soon.</span>
+            </div>
+          )
+        }
       </div>
       <div class="card prose">
         <p>{profile.bio}</p>
         <p>
-          Beyond formal research, I enjoy reading, music, and organizing study
-          notes into structured materials. I often use writing as a way to
-          clarify concepts, connect different areas of physics, and record the
-          development of my research interests. This website is also intended as
-          a long-term archive of my learning process and academic growth.
+          I also use writing and study notes to clarify concepts, connect
+          different areas of physics, and record the development of my academic
+          interests.
         </p>
       </div>
     </div>
@@ -65,7 +65,9 @@ const withBase = (path: string) =>
           {
             profile.currentProjects.map((project) => (
               <article class="card">
-                <p>{project}</p>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <p class="meta">{project.status}</p>
               </article>
             ))
           }
@@ -80,10 +82,10 @@ const withBase = (path: string) =>
           newsItems.map((item) => (
             <article class="card">
               <p class="meta">
-                {item.data.date.toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
+                {item.data.date.toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
                 })}
               </p>
               <h3>{item.data.title}</h3>
