@@ -6,6 +6,7 @@ const news = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     summary: z.string(),
+    pinned: z.boolean().optional(),
   }),
 });
 
@@ -26,6 +27,7 @@ const publications = defineCollection({
     year: z.number(),
     category: z.enum(["preprint", "in-preparation", "report"]),
     status: z.string().optional(),
+    pdf: z.string().optional(),
   }),
 });
 
