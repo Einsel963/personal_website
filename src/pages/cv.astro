@@ -9,92 +9,55 @@ const withBase = (path: string) =>
 <BaseLayout title="CV">
   <section class="page-intro">
     <p class="eyebrow">Curriculum Vitae</p>
-    <h1>Short Web CV</h1>
+    <h1>{profile.name}</h1>
     <p class="lead">
-      This page provides a brief academic self-introduction, including my
-      education, research experience, academic activities, honors, and technical
-      background. A PDF version of my CV is also available for reference.
+      {profile.contact.location} &middot; {profile.contact.email} &middot;{" "}
+      <a href={profile.contact.github}>GitHub</a>
+    </p>
+    <p>
+      <a class="button-link" href={withBase(profile.cv.pdfPath)} download>
+        Download PDF CV
+      </a>
     </p>
   </section>
 
   <section class="stack">
     <article class="card">
-      <h2>Profile</h2>
-      <p>
-        I recently graduated from Jilin University and am preparing for graduate
-        study in physics. My current research focuses on multipartite Bell
-        nonlocality, quantum realizability, entanglement structures, and
-        numerical methods for quantum correlations.
-      </p>
-      <p>
-        My broader interests include quantum many-body systems and open and
-        nonequilibrium quantum systems. I also have an emerging interest in
-        tensor-network methods and their applications to quantum many-body
-        systems and quantum computation.
-      </p>
-      <p>
-        <a class="button-link" href={withBase(profile.cv.pdfPath)} download>
-          Download PDF CV
-        </a>
-      </p>
-    </article>
-
-    <article class="card">
       <h2>Education</h2>
       <div class="stack">
         <div>
           <h3>Jilin University</h3>
-          <p>
-            B.Eng. in Transportation Engineering<br />
-            Sept. 2021 – Jun. 2026<br />
-            Overall average: 84.16/100
+          <p class="meta">
+            B.Eng. in Traffic and Transportation<br />
+            Sept. 2021 &ndash; Jun. 2026<br />
+            Changchun, China
           </p>
+          <p>GPA: 3.16/4.0; Overall average: 84.39/100</p>
+          <p class="meta">Physics and Mathematics</p>
+          <ul>
+            <li>Quantum Mechanics (95.1)</li>
+            <li>Thermodynamics and Statistical Physics (80.2)</li>
+            <li>Calculus (93)</li>
+            <li>Mathematical Modeling (95)</li>
+            <li>University Physics (85.6)</li>
+            <li>Electrodynamics (82.6)</li>
+            <li>Lie Groups and Lie Algebras (95)</li>
+            <li>Methods of Mathematical Physics II (86.2)</li>
+          </ul>
         </div>
         <div>
           <h3>Jilin University</h3>
-          <p>
+          <p class="meta">
             Minor in Quantum Information Science<br />
-            Sept. 2025 – Jun. 2026
+            Sept. 2025 &ndash; Jun. 2026<br />
+            Changchun, China
           </p>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <h2>Selected Coursework</h2>
-      <div class="card-grid two-column">
-        <div>
-          <h3>Physics and Mathematics</h3>
-          <ul>
-            <li>Quantum Mechanics: 95.1</li>
-            <li>Thermodynamics and Statistical Physics: 80.2</li>
-            <li>Calculus: 93</li>
-            <li>Mathematical Modeling: 95</li>
-            <li>University Physics: 85.6</li>
-            <li>Methods of Mathematical Physics II: 86.2</li>
-            <li>Electrodynamics: coming soon</li>
-            <li>Lie Groups and Lie Algebras: coming soon</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Quantum Information</h3>
+          <p class="meta">Selected Coursework</p>
           <ul>
             <li>Introduction to Quantum Information</li>
-            <li>Laser Spectroscopy</li>
             <li>Quantum Optics</li>
             <li>Quantum Computing</li>
             <li>Quantum Precision Measurement</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Computing and Data Science</h3>
-          <ul>
-            <li>University Computer: 91</li>
-            <li>Theory and Practice of Artificial Intelligence: 96.9</li>
-            <li>Theory and Method of Transportation Big Data: 86</li>
-            <li>
-              Course Experiment of Transport Big Data Theory and Method: 90
-            </li>
           </ul>
         </div>
       </div>
@@ -105,12 +68,11 @@ const withBase = (path: string) =>
       <div class="stack">
         <div>
           <h3>
-            Quantum Nonlocality and Multipartite Entanglement in the (3,2,2)
-            Scenario
+            Fixed-Measurement Quantum Correlations and Tripartite Entanglement
           </h3>
           <p class="meta">
             University of Tokyo<br />
-            July 2025 – Present<br />
+            July 2025 &ndash; Present<br />
             Supervisor: Prof. Naomichi Hatano<br />
             Research Mentor: Asst. Prof. Jaeha Lee
           </p>
@@ -120,7 +82,7 @@ const withBase = (path: string) =>
           <h3>Nuclear Matter Phase Structure Study</h3>
           <p class="meta">
             Institute of Modern Physics, Chinese Academy of Sciences<br />
-            June 2023 – Aug. 2023<br />
+            June 2023 &ndash; Aug. 2023<br />
             Supervisor: Hao Qiu
           </p>
         </div>
@@ -155,18 +117,15 @@ const withBase = (path: string) =>
             <li>GRU and LSTM models</li>
             <li>Clustering</li>
             <li>Time-series forecasting</li>
-            <li>Feature preprocessing</li>
             <li>Model evaluation</li>
           </ul>
         </div>
         <div>
-          <h3>Research Tools and Languages</h3>
+          <h3>Research Tools</h3>
           <ul>
             <li>LaTeX</li>
             <li>Git</li>
             <li>COMSOL</li>
-            <li>Chinese: native</li>
-            <li>English: TOEFL 89</li>
           </ul>
         </div>
       </div>
@@ -176,16 +135,20 @@ const withBase = (path: string) =>
       <h2>Honors and Awards</h2>
       <ul>
         <li>
-          Second-Class Scholarship, Jilin University, Rank 7/74, Apr. 2026
+          Second-Class Scholarship (Rank 7/74), Jilin University, Apr. 2026
         </li>
         <li>
-          College Excellent Student, Jilin University, Rank 7/74, Apr. 2026
+          College Excellent Student (Rank 7/74), Jilin University, Apr. 2026
         </li>
         <li>
           Provincial Second Prize, National College Students Mathematical
-          Contest in Modeling, Dec. 2023
+          Contest in Modeling, Chinese Society of Industrial and Applied
+          Mathematics, Dec. 2023
         </li>
-        <li>Second Prize, China Undergraduate Physics Tournament, Dec. 2022</li>
+        <li>
+          Second Prize, China Undergraduate Physics Tournament (CUPT), College
+          of Physics, Jilin University, Dec. 2022
+        </li>
       </ul>
     </article>
 
