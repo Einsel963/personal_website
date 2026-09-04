@@ -3,37 +3,25 @@ export const profile = {
   name: "Xiangyu Ma",
   title: "Recent Graduate | Prospective Graduate Student in Physics",
   shortIdentity:
-    "recent graduate of Jilin University with research experience in quantum information, multipartite Bell nonlocality, and numerical studies of quantum correlations.",
-  bio: `I recently graduated from Jilin University. My current research focuses on multipartite Bell nonlocality, entanglement structures, and quantum realizability in tripartite systems. I combine analytical calculations with Monte Carlo sampling, numerical optimization, semidefinite programming, and the NPA hierarchy. My broader interests include quantum many-body systems and open and nonequilibrium quantum systems, and I am beginning to explore tensor-network methods as a possible future direction.`,
+    "Recent graduate of Jilin University, now working on quantum nonlocality, multipartite entanglement, and fixed-measurement quantum correlations in tripartite Bell scenarios.",
+  bio: `I hold a B.Eng. in Traffic and Transportation from Jilin University and completed a minor in Quantum Information Science. My research focuses on quantum information theory, particularly fixed-measurement quantum correlations, Bell nonlocality, and multipartite entanglement. I use analytical methods and numerical optimization to study the realizability and geometry of quantum correlations and the entanglement structures they reveal.`,
   researchInterests: [
     "quantum information theory",
     "Bell nonlocality and multipartite entanglement",
-    "quantum realizability and measurement constraints",
-    "multipartite quantum correlations",
-    "quantum many-body systems",
-    "open and nonequilibrium quantum systems",
+    "quantum algorithms",
+    "quantum many-body physics",
+    "open quantum systems",
   ],
   currentProjects: [
     {
       title:
-        "Necessary and Sufficient Conditions for Quantum Realizability in Tripartite Systems",
-      status: "Ongoing project; manuscript in preparation.",
-      period: "July 2025 - Present",
+        "Fixed-Measurement Quantum Correlations and Tripartite Entanglement",
+      status: "Ongoing research.",
+      period: "July 2025–Present",
+      focus:
+        "Quantum realizability and entanglement certification in the tripartite (3,2,2) Bell scenario under fixed local measurements.",
       people:
-        "Supervision and mentoring: Prof. Naomichi Hatano; Asst. Prof. Jaeha Lee",
-    },
-    {
-      title:
-        "Correlation-Tensor Structures of Tripartite Entangled States and Bell Nonlocality",
-      status: "Ongoing project.",
-      period: "July 2025 - Present",
-      people: "Related to my research internship in the Hatano Group",
-    },
-    {
-      title: "Toward Quantum Realizability in General Multipartite Systems",
-      status: "Long-term project / prospective direction.",
-      period: "Future extension",
-      people: "Independent long-term research planning",
+        "Supervised by Prof. Naomichi Hatano and mentored by Asst. Prof. Jaeha Lee; initiated during a summer research internship in the Hatano Group at the University of Tokyo.",
     },
   ],
   cv: {
@@ -42,8 +30,10 @@ export const profile = {
   contact: {
     email: "MXY1963937485 [at] hotmail [dot] com",
     github: "https://github.com/Einsel963",
-    scholar: "Coming soon",
-    orcid: "Coming soon",
+    orcid: {
+      id: "0009-0002-3320-1450",
+      url: "https://orcid.org/0009-0002-3320-1450",
+    },
     location: "Wuhan, Hubei, China",
   },
 };

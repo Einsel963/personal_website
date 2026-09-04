@@ -1,20 +1,19 @@
 ---
 title: "Midterm Research Report on Multipartite Bell Inequalities"
-event: "Internal research presentation"
-location: "Department group meeting"
-date: 2026-01-01
+event: "Online Research Group Meeting"
+location: "Online"
+date: 2026-02-27
 type: "research-talk"
 category: "talk"
 year: 2026
-status: "Slides available"
+status: "Presented"
 pdf: "/files/talks/midterm_report.pdf"
 ---
 
-This midterm report summarizes my ongoing work on multipartite Bell scenarios
-and the geometry of quantum correlations. The presentation focuses on Bell-type
-inequalities in the $(3,2,2)$ setting, correlation tensors, biseparable
-reductions, and the role of entanglement structure in shaping observable
-correlation patterns.
+Presented at the first online research group meeting after the project resumed
+following my 2025 summer research internship. The presentation reviewed the
+state of the tripartite Bell-correlation project at that time and outlined the
+next stage of the research.
 
-The slides are intended as a working research report rather than a formal
+The slides are a working internal research report rather than a formal
 conference presentation.
